@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carto Grocery</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/api/placeholder/80/80" alt="Grocery Shop Logo" class="logo-img">
+            <h1>Carto Grocery</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li class="cart-icon">
+                <a href="#cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <h3>Total: $<span id="cart-total-amount">0.00</span></h3>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <header>
+        <h1>Welcome to Carto Grocery</h1>
+        <p>Shop for Fresh Groceries</p>
+    </header>
+
+    <!-- Filter Section -->
+    <div class="filters">
+        <select id="sort-by">
+            <option value="default">Sort by</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A to Z</option>
+        </select>
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="fruits">Fruits</button>
+            <button class="filter-btn" data-category="vegetables">Vegetables</button>
+            <button class="filter-btn" data-category="dairy">Dairy</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="item" data-category="fruits">
+            <img src="/img/apple.png" alt="Apples">
+            <h2>Apples</h2>
+            <p class="price">Price: $2.50/kg</p>
+            <div class="item-controls">
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart" data-id="1" data-name="Apples" data-price="2.50">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="item" data-category="fruits">
+            <img src="/api/placeholder/200/200" alt="Bananas">
+            <h2>Bananas</h2>
+            <p class="price">Price: $1.20/kg</p>
+            <div class="item-controls">
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart" data-id="2" data-name="Bananas" data-price="1.20">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="item" data-category="vegetables">
+            <img src="/api/placeholder/200/200" alt="Tomatoes">
+            <h2>Tomatoes</h2>
+            <p class="price">Price: $1.80/kg</p>
+            <div class="item-controls">
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart" data-id="3" data-name="Tomatoes" data-price="1.80">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="item" data-category="vegetables">
+            <img src="/api/placeholder/200/200" alt="Carrots">
+            <h2>Carrots</h2>
+            <p class="price">Price: $1.50/kg</p>
+            <div class="item-controls">
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart" data-id="4" data-name="Carrots" data-price="1.50">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="item" data-category="vegetables">
+            <img src="/api/placeholder/200/200" alt="Potatoes">
+            <h2>Potatoes</h2>
+            <p class="price">Price: $0.90/kg</p>
+            <div class="item-controls">
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart" data-id="5" data-name="Potatoes" data-price="0.90">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="item" data-category="vegetables">
+            <img src="/api/placeholder/200/200" alt="Onions">
+            <h2>Onions</h2>
+            <p class="price">Price: $1.10/kg</p>
+            <div class="item-controls">
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart" data-id="6" data-name="Onions" data-price="1.10">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="item" data-category="dairy">
+            <img src="/api/placeholder/200/200" alt="Milk">
+            <h2>Milk</h2>
+            <p class="price">Price: $1.00/L</p>
+            <div class="item-controls">
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart" data-id="7" data-name="Milk" data-price="1.00">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="item" data-category="dairy">
+            <img src="/api/placeholder/200/200" alt="Eggs">
+            <h2>Eggs</h2>
+            <p class="price">Price: $2.00/dozen</p>
+            <div class="item-controls">
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart" data-id="8" data-name="Eggs" data-price="2.00">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="item" data-category="dairy">
+            <img src="/api/placeholder/200/200" alt="Bread">
+            <h2>Bread</h2>
+            <p class="price">Price: $1.50/loaf</p>
+            <div class="item-controls">
+                <div class="quantity-controls">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart" data-id="9" data-name="Bread" data-price="1.50">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rest of the HTML remains the same -->
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="payment">Payment Method</label>
+                    <select id="payment" required>
+                        <option value="">Select payment method</option>
+                        <option value="credit">Credit Card</option>
+                        <option value="debit">Debit Card</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-order">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

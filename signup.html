@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-Up</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="signup-container">
+    <div class="form-box">
+      <h2>Create Account</h2>
+      <form id="signup-form">
+        <!-- Full Name -->
+        <div class="name-container">
+          <div class="input-box half-width">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName">
+            
+          </div>
+
+        </div>
+
+        <!-- Username -->
+        <div class="input-box">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+          
+        </div>
+
+        <!-- Email -->
+        <div class="input-box">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+          
+        </div>
+
+        <!-- Password -->
+        <div class="input-box">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+          
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="input-box">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword">
+         
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-btn">
+          <input type="submit" onclick="getData()" value="Sign Up">
+          <a href="main.html"></a>
+        </div>
+      
+
+        <p class="login-text">Already have an account? <a href="login.html">Log In</a></p>
+      <!-- </form> -->
+    </div>
+  </div>
+</body>
+</html>
+
+<script src="signup.js"></script>

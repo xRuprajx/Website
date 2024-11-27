@@ -1,0 +1,74 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(./img/bgdark.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #e0e0e0;
+}
+
+.contact-container {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 1em;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+    color: #cdcdcd;
+    align-self: flex-start;
+    margin-left: 5%;
+}
+
+input, textarea {
+    padding: 0.8em;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 90%;
+    box-sizing: border-box;
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
+input:focus, textarea:focus {
+    border-color: #74ebd5;
+    outline: none;
+}
+
+button {
+    padding: 0.8em;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 90%;
+    margin-bottom: 1em; 
+
+button:hover {
+    background-color: #45a049;
+}
+
+.contact-container {
+    padding-bottom: 2em; 
+}
